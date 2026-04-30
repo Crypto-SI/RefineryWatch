@@ -15,12 +15,74 @@ function initNav() {
   });
 }
 
+function initHeroCarousel() {
+  const carousel = document.querySelector("[data-hero-carousel]");
+  if (!carousel) return;
+  const slides = Array.from(carousel.querySelectorAll("[data-hero-slide]"));
+  const dots = Array.from(carousel.querySelectorAll("[data-hero-dot]"));
+  const progress = carousel.querySelector("[data-hero-progress]");
+  if (slides.length < 2 || dots.length !== slides.length) return;
+  let activeIndex = slides.findIndex(slide => slide.classList.contains("is-active"));
+  if (activeIndex < 0) activeIndex = 0;
+  let timer;
+
+  const show = index => {
+    if (index === activeIndex) return;
+    const previous = activeIndex;
+    activeIndex = index;
+    slides.forEach((slide, slideIndex) => {
+      const active = slideIndex === index;
+      const exiting = slideIndex === previous && previous !== index;
+      slide.classList.toggle("is-exiting", exiting);
+      slide.classList.toggle("is-active", active);
+      slide.hidden = !active && !exiting;
+      slide.setAttribute("aria-hidden", String(!active));
+      if (exiting) {
+        window.setTimeout(() => {
+          slide.classList.remove("is-exiting");
+          if (!slide.classList.contains("is-active")) slide.hidden = true;
+        }, 650);
+      }
+    });
+    dots.forEach((dot, dotIndex) => {
+      const active = dotIndex === index;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  const restartProgress = () => {
+    if (!progress) return;
+    progress.classList.remove("is-running");
+    void progress.offsetWidth;
+    progress.classList.add("is-running");
+  };
+
+  const startTimer = () => {
+    window.clearInterval(timer);
+    restartProgress();
+    timer = window.setInterval(() => {
+      show((activeIndex + 1) % slides.length);
+      restartProgress();
+    }, 5000);
+  };
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      show(index);
+      startTimer();
+    });
+  });
+
+  startTimer();
+}
+
 function statusCards() {
   mount("[data-status-cards]", data.ipoStatus.map(item => `
     <article class="status-card ${item.tone}">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
-      <em>${item.value === "Pending" ? "Pending" : item.value.includes("confirmed") || item.value.includes("Awaiting") ? "Unknown" : "Unknown"}</em>
+      <em>${item.state || "Unknown"}</em>
     </article>
   `).join(""));
 }
@@ -103,6 +165,7 @@ function articles() {
     <a class="article-link" href="${article.href}">
       <span>${article.category}</span>
       <strong>${article.title}</strong>
+      ${article.description ? `<p>${article.description}</p>` : ""}
     </a>
   `).join(""));
 }
@@ -120,6 +183,7 @@ function initForms() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
+  initHeroCarousel();
   statusCards();
   riskCards();
   brokerCards();

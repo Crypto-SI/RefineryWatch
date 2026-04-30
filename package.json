@@ -1,9 +1,10 @@
 {
-  "name": "refinery-watch-africa",
+  "name": "ipo-watch-africa",
   "version": "1.0.0",
   "private": true,
-  "description": "Static educational website for Refinery Watch Africa.",
+  "description": "Static educational website for IPO Watch Africa.",
   "scripts": {
+    "build": "node scripts/build-site.mjs",
     "dev": "python3 -m http.server 4173",
     "start": "python3 -m http.server 4173"
   }

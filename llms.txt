@@ -1,0 +1,35 @@
+# IPO Watch Africa
+
+> Independent educational tracker for African IPOs, starting with the potential Dangote Refinery IPO, listing status, risks, broker access, and investor education.
+
+Production URL placeholder: https://ipowatchafrica.com
+Last updated: 2026-04-30
+
+Important pages:
+- Home and current status: https://ipowatchafrica.com/
+- IPO tracker: https://ipowatchafrica.com/tracker.html
+- Timeline: https://ipowatchafrica.com/timeline.html
+- Risks: https://ipowatchafrica.com/risks.html
+- Broker directory: https://ipowatchafrica.com/brokers.html
+- Learn hub: https://ipowatchafrica.com/learn.html
+- Editorial policy: https://ipowatchafrica.com/editorial-policy.html
+
+Major explainers:
+- What is the Dangote Refinery IPO?: https://ipowatchafrica.com/what-is-the-dangote-refinery-ipo.html
+- Can ordinary investors buy Dangote Refinery shares?: https://ipowatchafrica.com/can-ordinary-investors-buy-dangote-refinery-shares.html
+- Which exchange will Dangote Refinery list on?: https://ipowatchafrica.com/which-exchange-will-dangote-refinery-list-on.html
+- Dangote Refinery IPO risks investors should understand: https://ipowatchafrica.com/dangote-refinery-ipo-risks.html
+- How to compare brokers before buying African equities: https://ipowatchafrica.com/how-to-compare-brokers-before-buying-african-equities.html
+- What does peak oil mean for refinery investors?: https://ipowatchafrica.com/what-does-peak-oil-mean-for-refinery-investors.html
+
+Editorial policy:
+- Educational information only; not financial advice.
+- Treat pricing, eligibility, exchange venue, allocation rules, and timetable as unknown until official prospectus details are available.
+- Prefer official issuer, exchange, and regulator sources over media reports.
+- Sponsored broker placements must be labelled and are not endorsements.
+
+Primary verification sources:
+- Dangote Petroleum Refinery: https://refinery.dangote.com/
+- Dangote Industries oil and gas page: https://dangote.com/our-business/oil-and-gas/
+- Nigerian Exchange Group: https://ngxgroup.com/
+- Securities and Exchange Commission, Nigeria: https://www.sec.gov.ng/

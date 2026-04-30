@@ -109,7 +109,7 @@ img {
 }
 
 .brand-mark::after {
-  content: "WEBARA";
+  content: "AFRICA";
   position: absolute;
   left: 50px;
   top: -3px;
@@ -220,6 +220,150 @@ button.button {
 
 .hero-content {
   max-width: 820px;
+}
+
+.hero-carousel {
+  position: relative;
+  width: min(900px, 100%);
+  min-height: 440px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateY(28px) scale(0.985);
+  filter: blur(8px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 620ms;
+}
+
+.hero-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transition-delay: 0s;
+}
+
+.hero-slide.is-exiting {
+  visibility: visible;
+  opacity: 0;
+  z-index: 0;
+  transform: translateY(-22px) scale(1.015);
+  filter: blur(7px);
+}
+
+.hero-slide .eyebrow,
+.hero-slide h1,
+.hero-slide .lede,
+.hero-slide .hero-actions,
+.hero-slide .mini-disclaimer {
+  transform: translateY(16px);
+  opacity: 0;
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-slide.is-active .eyebrow,
+.hero-slide.is-active h1,
+.hero-slide.is-active .lede,
+.hero-slide.is-active .hero-actions,
+.hero-slide.is-active .mini-disclaimer {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-slide.is-active h1 {
+  transition-delay: 70ms;
+}
+
+.hero-slide.is-active .lede {
+  transition-delay: 140ms;
+}
+
+.hero-slide.is-active .hero-actions {
+  transition-delay: 210ms;
+}
+
+.hero-slide.is-active .mini-disclaimer {
+  transition-delay: 280ms;
+}
+
+.hero-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-controls button {
+  width: 42px;
+  height: 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(203, 190, 154, 0.3);
+  cursor: pointer;
+}
+
+.hero-controls button.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.hero-progress {
+  position: relative;
+  width: min(280px, 100%);
+  height: 2px;
+  margin-top: 18px;
+  overflow: hidden;
+  background: rgba(203, 190, 154, 0.24);
+}
+
+.hero-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--gold), var(--red));
+}
+
+.hero-progress.is-running span {
+  animation: heroProgress 5s linear forwards;
+}
+
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-slide .eyebrow,
+  .hero-slide h1,
+  .hero-slide .lede,
+  .hero-slide .hero-actions,
+  .hero-slide .mini-disclaimer,
+  .hero-progress span {
+    animation: none;
+    transition: none;
+    transform: none;
+    filter: none;
+  }
 }
 
 .eyebrow,
@@ -583,12 +727,21 @@ textarea {
   margin: 18px 0;
 }
 
+.meta-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
 .broker-card dt,
-.broker-card dd {
+.broker-card dd,
+.meta-list dt,
+.meta-list dd {
   margin: 0;
 }
 
-.broker-card dd {
+.broker-card dd,
+.meta-list dd {
   color: var(--cream);
 }
 
@@ -620,6 +773,56 @@ textarea {
 
 .article-link:hover {
   border-color: rgba(217, 166, 58, 0.74);
+}
+
+.article-body {
+  max-width: 820px;
+}
+
+.article-body h2 {
+  margin-top: 34px;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.answer-box {
+  margin-bottom: 28px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  background: var(--bg-panel);
+}
+
+.answer-box p {
+  margin-bottom: 0;
+  color: var(--cream);
+  font-size: 20px;
+}
+
+.source-list {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.source-list li {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(217, 166, 58, 0.18);
+}
+
+.source-list a,
+.meta-list a,
+.article-body a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.source-list span {
+  color: var(--beige);
 }
 
 .form-grid {
@@ -705,6 +908,24 @@ textarea {
   padding-top: 20px;
 }
 
+.footer-credit {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+
+.footer-credit img {
+  height: 44px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer-credit:hover img {
+  opacity: 1;
+}
+
 @media (max-width: 900px) {
   .menu-button {
     display: grid;
@@ -778,6 +999,10 @@ textarea {
 
   .hero-content {
     max-width: 320px;
+  }
+
+  .hero-carousel {
+    min-height: 490px;
   }
 
   .hero-actions {
