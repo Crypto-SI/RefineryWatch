@@ -4,17 +4,17 @@ const site = {
   name: "IPO Watch Africa",
   domain: "https://ipowatchafrica.com",
   description:
-    "Independent educational tracking for African IPOs, listing status, broker access, risks, and retail investor context.",
+    "Independent educational tracking for the potential Dangote Refinery IPO, listing status, broker access, risks, and retail investor context.",
   image:
     "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=80",
   updated: "2026-04-30",
-  assetVersion: "20260430-3",
+  assetVersion: "20260430-5",
   author: "IPO Watch Africa editorial desk",
   reviewedBy: "IPO Watch Africa research desk",
 };
 
 const nav = [
-  ["tracker.html", "IPO Tracker"],
+  ["tracker.html", "Dangote Tracker"],
   ["timeline.html", "Timeline"],
   ["risks.html", "Risks"],
   ["brokers.html", "Brokers"],
@@ -25,20 +25,10 @@ const nav = [
 
 const heroSlides = [
   {
-    eyebrow: "African IPO tracker",
-    title: "IPO WATCH AFRICA",
+    eyebrow: "Dangote Refinery IPO tracker",
+    title: "DANGOTE REFINERY IPO WATCH",
     lede:
-      "Plain-English trackers for African listing stories, prospectus status, risks, broker access, and public ownership updates.",
-    primaryHref: "learn.html",
-    primaryLabel: "Explore IPO Guides",
-    secondaryHref: "brokers.html",
-    secondaryLabel: "Find a Broker",
-  },
-  {
-    eyebrow: "Flagship tracker",
-    title: "DANGOTE REFINERY IPO TRACKER",
-    lede:
-      "Follow Africa's biggest refinery listing story: confirmed facts, unknowns, risk education, broker access, and prospectus updates.",
+      "Follow the potential Dangote Refinery listing in plain English: confirmed facts, unknowns, risk education, broker access, and prospectus updates.",
     primaryHref: "tracker.html",
     primaryLabel: "View Dangote Tracker",
     secondaryHref: "risks.html",
@@ -88,7 +78,7 @@ const timeline = [
     date: "Awaiting official announcement",
     title: "Prospectus not yet published",
     body:
-      "IPO Watch Africa is tracking official disclosures, exchange announcements, and prospectus details before treating listing terms as confirmed.",
+      "IPO Watch Africa is tracking Dangote Refinery disclosures, exchange announcements, and prospectus details before treating listing terms as confirmed.",
     tag: "Pending",
   },
   {
@@ -98,6 +88,40 @@ const timeline = [
       "Listing plans have been reported, but final investor access, exchange venue, allocation rules, pricing, and timetable remain unconfirmed.",
     tag: "Reported",
   },
+];
+
+const anticipatedTimeline = [
+  {
+    date: "April 2026",
+    title: "Prospectus filing",
+    body: "Prospectus filing anticipated, subject to issuer, exchange, and regulator confirmation.",
+    tag: "Filed / expected",
+  },
+  {
+    date: "May 2026",
+    title: "Roadshow and offers open",
+    body: "National roadshow and offer-opening period expected to begin.",
+    tag: "Expected",
+  },
+  {
+    date: "June-July 2026",
+    title: "NGX listing",
+    body: "Listing on the Nigerian Exchange main board expected if approvals and offer mechanics align.",
+    tag: "Expected",
+  },
+  {
+    date: "August 2026",
+    title: "Subscription window",
+    body: "Subscription window expected to open, with final eligibility and allocation terms still to be confirmed.",
+    tag: "Expected",
+  },
+];
+
+const anticipatedDetails = [
+  ["Listing venue", "Primary listing expected on the Nigerian Exchange (NGX) main board, with potential cross-border listings."],
+  ["Offer size", "Roughly 5% to 10% of the refinery's equity is expected to be offered to the public."],
+  ["Valuation", "Analyst estimates have put the company between $40 billion and $50 billion."],
+  ["Advisers", "Stanbic IBTC Capital, Vetiva Capital Management, and FirstCap are handling the transaction."],
 ];
 
 const risks = [
@@ -188,7 +212,7 @@ const stats = {
   totalViews: "128,420",
   uniqueVisitors: "47,810",
   topCountries: ["Nigeria", "United Kingdom", "United States", "Ghana", "South Africa"],
-  mostReadPages: ["IPO Tracker", "Broker Directory", "Risks", "Can ordinary investors buy shares?"],
+  mostReadPages: ["Dangote Tracker", "Broker Directory", "Risks", "Can ordinary investors buy shares?"],
   newsletterSignups: "8,940",
   brokerClicks: "3,275",
 };
@@ -251,7 +275,7 @@ const articles = [
     slug: "how-to-compare-brokers-before-buying-african-equities.html",
     category: "Broker education",
     description:
-      "A practical checklist for comparing brokers before buying African equities or applying for a future IPO.",
+      "A practical checklist for comparing brokers before buying African equities or applying for the potential Dangote Refinery IPO.",
     answer:
       "Compare brokers by regulation, licence number, market access, custody model, fees, FX costs, complaint route, account minimums, and IPO allocation rules. A broker listing is not the same as an endorsement.",
     sections: [
@@ -279,13 +303,13 @@ const articles = [
 const pages = [
   {
     file: "index.html",
-    title: "IPO Watch Africa: African IPO Trackers, Risks and Broker Access",
+    title: "Dangote Refinery IPO Tracker, Risks and Broker Access",
     description:
-      "Track African IPOs with plain-English updates on listing status, prospectus details, risks, broker access, and retail investor education, starting with Dangote Refinery.",
-    h1: "IPO WATCH AFRICA",
-    eyebrow: "African IPO tracker",
+      "Track the potential Dangote Refinery IPO with plain-English updates on listing status, prospectus details, risks, broker access, and retail investor education.",
+    h1: "DANGOTE REFINERY IPO WATCH",
+    eyebrow: "Dangote Refinery IPO tracker",
     lede:
-      "Plain-English trackers for African listing stories, starting with Dangote Refinery: facts, risks, broker access, and public ownership updates.",
+      "Plain-English tracking for the Dangote Refinery listing story: facts, risks, broker access, and public ownership updates.",
     type: "WebPage",
     hero: true,
     body: homeBody,
@@ -296,7 +320,7 @@ const pages = [
     description:
       "Confirmed and pending details for the potential Dangote Refinery IPO, including prospectus status, exchange, retail access, broker access, and timeline.",
     h1: "Dangote Refinery listing facts",
-    eyebrow: "IPO Tracker",
+    eyebrow: "Dangote Tracker",
     lede:
       "A plain-language tracker for prospectus status, expected exchange, retail access, broker access, and confirmed updates.",
     body: trackerBody,
@@ -319,18 +343,18 @@ const pages = [
     h1: "Understand the risks before the hype",
     eyebrow: "Risk dashboard",
     lede:
-      "A credible Africa refinery IPO tracker must make uncertainty visible. This page is educational and does not recommend any investment action.",
+      "A credible Dangote Refinery IPO tracker must make uncertainty visible. This page is educational and does not recommend any investment action.",
     body: risksBody,
   },
   {
     file: "brokers.html",
     title: "Brokers for African Stocks and Possible Dangote Refinery IPO Access",
     description:
-      "Compare broker access for African equities, Nigerian Exchange exposure, diaspora investors, and possible IPO participation. Listings are not endorsements.",
+      "Compare broker access that may matter for the potential Dangote Refinery IPO, Nigerian Exchange exposure, diaspora investors, and possible IPO participation. Listings are not endorsements.",
     h1: "Find a Broker",
     eyebrow: "Broker Directory",
     lede:
-      "Compare brokers that may provide access to African equities and IPO opportunities. Always verify regulation, fees, eligibility, and risk before opening an account.",
+      "Compare brokers that may provide relevant market access if a Dangote Refinery offer becomes available. Always verify regulation, fees, eligibility, and risk before opening an account.",
     body: brokersBody,
   },
   {
@@ -348,11 +372,11 @@ const pages = [
     file: "learn.html",
     title: "Learn About the Dangote Refinery IPO, Shares, Brokers and Risks",
     description:
-      "Simple articles explaining the Dangote Refinery IPO, African energy investment, Nigerian Exchange IPOs, broker comparison, and refinery risks.",
-    h1: "Simple IPO education for ordinary investors",
+      "Simple articles explaining the potential Dangote Refinery IPO, broker comparison, Nigerian Exchange access, and refinery-specific risks.",
+    h1: "Simple Dangote IPO education",
     eyebrow: "Learn",
     lede:
-      "Short, neutral explainers about Dangote Refinery shares, African stock market access, brokers for African stocks, and refinery-specific risk.",
+      "Short, neutral explainers about Dangote Refinery shares, broker access, listing documents, and refinery-specific risk.",
     body: learnBody,
     faq: true,
   },
@@ -360,11 +384,11 @@ const pages = [
     file: "about.html",
     title: "About IPO Watch Africa and Our Editorial Standard",
     description:
-      "About IPO Watch Africa, an independent educational website tracking African IPOs, starting with the potential Dangote Refinery IPO.",
+      "About IPO Watch Africa, an independent educational website focused first on the potential Dangote Refinery IPO.",
     h1: "Independent education, not financial advice",
     eyebrow: "About",
     lede:
-      "IPO Watch Africa explains African IPOs, listings, broker access, and risks in simple language for ordinary people across Africa and the diaspora.",
+      "IPO Watch Africa currently focuses on the potential Dangote Refinery IPO, with simple education for ordinary people across Africa and the diaspora.",
     body: aboutBody,
   },
   {
@@ -618,19 +642,14 @@ function standardHero(page) {
 }
 
 function homeHero() {
-  return `<div class="hero-carousel" data-hero-carousel>
-          ${heroSlides.map((slide, index) => `<article class="hero-content hero-slide${index === 0 ? " is-active" : ""}" data-hero-slide aria-hidden="${index === 0 ? "false" : "true"}"${index === 0 ? "" : " hidden"}>
+  const slide = heroSlides[0];
+  return `<article class="hero-content">
             <span class="eyebrow">${slide.eyebrow}</span>
             <h1>${slide.title}</h1>
             <p class="lede">${slide.lede}</p>
             <div class="hero-actions"><a class="button" href="${slide.primaryHref}">${slide.primaryLabel}</a><a class="button secondary" href="${slide.secondaryHref}">${slide.secondaryLabel}</a><a class="button ghost" href="#watchlist">Join Updates</a></div>
             <p class="mini-disclaimer">Educational information only. Not financial advice.</p>
-          </article>`).join("")}
-          <div class="hero-controls" aria-label="Hero slides">
-            ${heroSlides.map((slide, index) => `<button type="button" class="${index === 0 ? "is-active" : ""}" data-hero-dot aria-label="Show ${escapeHtml(slide.title)} slide" aria-pressed="${index === 0 ? "true" : "false"}"></button>`).join("")}
-          </div>
-          <div class="hero-progress is-running" data-hero-progress aria-hidden="true"><span></span></div>
-        </div>`;
+          </article>`;
 }
 
 function statusCards() {
@@ -659,14 +678,19 @@ function statCards() {
   return `<div class="grid stat-grid" data-stats><article><span>Total views</span><strong>${stats.totalViews}</strong></article><article><span>Unique visitors</span><strong>${stats.uniqueVisitors}</strong></article><article><span>Newsletter signups</span><strong>${stats.newsletterSignups}</strong></article><article><span>Broker directory clicks</span><strong>${stats.brokerClicks}</strong></article></div>`;
 }
 
+function anticipatedTimelineSection() {
+  return `<section class="section"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">Anticipated timetable</span><h2>Late April 2026 IPO timeline</h2></div><p>Exact dates remain subject to regulatory approval and official offer documents. These are the key anticipated dates being watched as of late April 2026.</p></div><div class="timeline-axis" aria-label="Anticipated Dangote Refinery IPO timeline">${anticipatedTimeline.map((item) => `<article class="axis-event"><span>${item.date}</span><h3>${item.title}</h3><p>${item.body}</p><b>${item.tag}</b></article>`).join("")}</div><div class="key-details"><h3>Key details</h3><dl>${anticipatedDetails.map(([term, description]) => `<div><dt>${term}</dt><dd>${description}</dd></div>`).join("")}</dl><p class="note">Market timetable cited from Bamboo Invest and related late-April 2026 commentary. Verify final terms against official issuer, NGX, SEC Nigeria, and prospectus documents.</p></div></div></section>`;
+}
+
 function homeBody() {
   return `
     <section class="section"><div class="section-inner">${statusCards()}</div></section>
+    ${anticipatedTimelineSection()}
     <section class="section alt"><div class="section-inner"><div class="section-heading"><h2>The 60-second explainer</h2></div><p class="lede">Dangote Petroleum Refinery is a major refinery in Lagos, Nigeria. If it lists publicly, investors may be able to buy shares through approved brokers, depending on the final exchange, prospectus, and eligibility rules.</p></div></section>
     <section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Confirmed</h2><ul class="fact-list"><li>The refinery is a major African energy asset</li><li>Public listing plans have been reported</li><li>Investors are waiting for official prospectus details</li></ul></article><article class="info-card unknown"><h2>Unknown</h2><ul class="fact-list"><li>Final exchange</li><li>Share price</li><li>Retail investor eligibility</li><li>Broker access</li><li>Dividend policy</li><li>Allocation rules</li></ul></article></div></section>
     <section class="section alt"><div class="section-inner"><div class="section-heading"><h2>Why people are watching</h2><p>Interest is high because a Dangote Refinery listing could become a landmark Africa refinery IPO, but significance does not remove risk.</p></div><div class="grid three-col"><article class="info-card"><h3>African infrastructure ownership</h3><p>Public markets can broaden participation in large-scale productive assets.</p></article><article class="info-card"><h3>Energy security</h3><p>Refining capacity affects domestic fuel supply, imports, and regional energy resilience.</p></article><article class="info-card"><h3>Possible export revenue</h3><p>Refined product exports may matter if operations, pricing, and demand align.</p></article><article class="info-card"><h3>Diaspora investor interest</h3><p>Many diaspora investors are watching African stock market access and eligibility rules.</p></article><article class="info-card"><h3>Potential dollar-linked earnings</h3><p>Some revenue streams may have foreign-currency exposure, while costs and FX rules remain important.</p></article><article class="info-card"><h3>Historic IPO significance</h3><p>A confirmed listing could become one of the most closely watched Nigerian Exchange IPO events.</p></article></div></div></section>
     <section class="section"><div class="section-inner"><div class="section-heading"><h2>Risk dashboard</h2><p>These are education notes, not a recommendation to buy, sell, or hold Dangote Refinery shares.</p></div>${riskCards()}</div></section>
-    <section class="section alt" id="brokers"><div class="section-inner"><div class="section-heading"><h2>Find a Broker</h2><p>Compare brokers that may provide access to African equities and IPO opportunities. Always verify regulation, fees, eligibility, and risk before opening an account.</p></div>${brokerFilters()}${brokerCards()}</div></section>
+    <section class="section alt" id="brokers"><div class="section-inner"><div class="section-heading"><h2>Find a Broker</h2><p>Compare brokers that may provide relevant market access if a Dangote Refinery offer becomes available. Always verify regulation, fees, eligibility, and risk before opening an account.</p></div>${brokerFilters()}${brokerCards()}</div></section>
     <section class="section"><div class="section-inner"><div class="section-heading"><h2>Investor Interest Map</h2><p>Privacy-safe aggregated demand signals for the Dangote Refinery listing conversation.</p></div>${statCards()}<div class="grid two-col" style="margin-top:16px"><article class="info-card"><h3>Top countries</h3><ul class="fact-list" data-top-countries>${stats.topCountries.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="info-card"><h3>Most-read pages</h3><ul class="fact-list" data-most-read>${stats.mostReadPages.map((item) => `<li>${item}</li>`).join("")}</ul></article></div><p class="note">Stats are aggregated and privacy-safe. We do not show IP addresses, exact user locations, individual visitor journeys, or real-time personal data.</p></div></section>
     <section class="section alt" id="watchlist"><div class="section-inner grid two-col"><div><span class="eyebrow">Watchlist</span><h2>Get notified when the prospectus drops.</h2><p>Receive confirmed updates about the Dangote Refinery IPO, broker access, and listing documents.</p></div>${watchlistForm()}</div></section>`;
 }
@@ -710,12 +734,12 @@ function articlePage(article) {
     eyebrow: article.category,
     lede: article.answer,
     article: true,
-    body: () => `<section class="section"><div class="section-inner"><article class="article-body"><div class="answer-box"><span class="small-label">Short answer</span><p>${article.answer}</p></div>${article.sections.map(([heading, body]) => `<h2>${heading}</h2><p>${body}</p>`).join("")}<div class="section-actions"><a class="button secondary" href="learn.html">Back to Learn</a><a class="button" href="tracker.html">View IPO Tracker</a></div></article></div></section>`,
+    body: () => `<section class="section"><div class="section-inner"><article class="article-body"><div class="answer-box"><span class="small-label">Short answer</span><p>${article.answer}</p></div>${article.sections.map(([heading, body]) => `<h2>${heading}</h2><p>${body}</p>`).join("")}<div class="section-actions"><a class="button secondary" href="learn.html">Back to Learn</a><a class="button" href="tracker.html">View Dangote Tracker</a></div></article></div></section>`,
   };
 }
 
 function aboutBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Mission</h2><p>We track confirmed updates, explain risks, show broker options, and publish accessible education without recommending whether anyone should buy, sell, or hold an investment.</p></article><article class="info-card"><h2>Editorial standard</h2><p>We separate confirmed information from unknowns, label sponsored placements, avoid price predictions, and keep investor protection visible.</p></article></div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Mission</h2><p>We track confirmed Dangote Refinery IPO updates, explain risks, show broker options, and publish accessible education without recommending whether anyone should buy, sell, or hold an investment.</p></article><article class="info-card"><h2>Editorial standard</h2><p>We separate confirmed information from unknowns, label sponsored placements, avoid price predictions, and keep investor protection visible.</p></article><article class="info-card"><h2>Future coverage</h2><p>The site may track other African IPOs later, but the current editorial focus is the potential Dangote Refinery listing.</p></article></div></section>`;
 }
 
 function editorialBody() {
@@ -723,7 +747,7 @@ function editorialBody() {
 }
 
 function advertiseBody() {
-  return `<section class="section"><div class="section-inner grid three-col"><article class="info-card"><h2>Why advertise with us</h2><p>IPO Watch Africa serves people looking for clear, neutral education about African IPOs, the Dangote Refinery IPO, African energy investment, and broker access.</p></article><article class="info-card"><h2>Audience</h2><ul class="fact-list"><li>African retail investors</li><li>Diaspora investors</li><li>Finance creators</li><li>Brokers</li><li>Journalists</li></ul></article><article class="info-card"><h2>Ad options</h2><ul class="fact-list"><li>Sponsored broker listing</li><li>Featured broker profile</li><li>Newsletter sponsorship</li><li>Display banner</li><li>Educational article sponsorship</li></ul></article></div></section><section class="section alt"><div class="section-inner grid two-col"><article class="info-card"><h2>Compliance rules</h2><ul class="fact-list"><li>All sponsored content must be labelled</li><li>No misleading claims</li><li>No guaranteed returns</li><li>Broker regulation must be disclosed</li><li>We reserve the right to reject advertisers</li></ul></article>${mediaKitForm()}</div></section>`;
+  return `<section class="section"><div class="section-inner grid three-col"><article class="info-card"><h2>Why advertise with us</h2><p>IPO Watch Africa serves people looking for clear, neutral education about the potential Dangote Refinery IPO, African energy investment, and broker access.</p></article><article class="info-card"><h2>Audience</h2><ul class="fact-list"><li>African retail investors</li><li>Diaspora investors</li><li>Finance creators</li><li>Brokers</li><li>Journalists</li></ul></article><article class="info-card"><h2>Ad options</h2><ul class="fact-list"><li>Sponsored broker listing</li><li>Featured broker profile</li><li>Newsletter sponsorship</li><li>Display banner</li><li>Educational article sponsorship</li></ul></article></div></section><section class="section alt"><div class="section-inner grid two-col"><article class="info-card"><h2>Compliance rules</h2><ul class="fact-list"><li>All sponsored content must be labelled</li><li>No misleading claims</li><li>No guaranteed returns</li><li>Broker regulation must be disclosed</li><li>We reserve the right to reject advertisers</li></ul></article>${mediaKitForm()}</div></section>`;
 }
 
 function contactBody() {
@@ -769,7 +793,7 @@ Sitemap: ${site.domain}/sitemap.xml
 function llms() {
   return `# ${site.name}
 
-> Independent educational tracker for African IPOs, starting with the potential Dangote Refinery IPO, listing status, risks, broker access, and investor education.
+> Independent educational tracker focused first on the potential Dangote Refinery IPO, listing status, risks, broker access, and investor education.
 
 Production URL placeholder: ${site.domain}
 Last updated: ${site.updated}

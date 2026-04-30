@@ -1,6 +1,6 @@
 # IPO Watch Africa
 
-> Independent educational tracker for African IPOs, starting with the potential Dangote Refinery IPO, listing status, risks, broker access, and investor education.
+> Independent educational tracker focused first on the potential Dangote Refinery IPO, listing status, risks, broker access, and investor education.
 
 Production URL placeholder: https://ipowatchafrica.com
 Last updated: 2026-04-30

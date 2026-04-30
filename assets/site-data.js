@@ -10,7 +10,7 @@ window.RWA_DATA = {
     {
       date: "Awaiting official announcement",
       title: "Prospectus not yet published",
-      body: "IPO Watch Africa is tracking official disclosures, exchange announcements, and prospectus details before treating listing terms as confirmed.",
+      body: "IPO Watch Africa is tracking Dangote Refinery disclosures, exchange announcements, and prospectus details before treating listing terms as confirmed.",
       tag: "Pending"
     },
     {
@@ -71,7 +71,7 @@ window.RWA_DATA = {
     totalViews: "128,420",
     uniqueVisitors: "47,810",
     topCountries: ["Nigeria", "United Kingdom", "United States", "Ghana", "South Africa"],
-    mostReadPages: ["IPO Tracker", "Broker Directory", "Risks", "Can ordinary investors buy shares?"],
+    mostReadPages: ["Dangote Tracker", "Broker Directory", "Risks", "Can ordinary investors buy shares?"],
     newsletterSignups: "8,940",
     brokerClicks: "3,275"
   },
@@ -80,7 +80,7 @@ window.RWA_DATA = {
     { title: "Can ordinary investors buy Dangote Refinery shares?", category: "Retail access", href: "can-ordinary-investors-buy-dangote-refinery-shares.html", description: "How retail and diaspora eligibility may depend on the final listing structure and broker access." },
     { title: "Which exchange will Dangote Refinery list on?", category: "Listing venue", href: "which-exchange-will-dangote-refinery-list-on.html", description: "Why exchange confirmation matters for settlement, disclosure, liquidity, and investor access." },
     { title: "Dangote Refinery IPO risks investors should understand", category: "Risk education", href: "dangote-refinery-ipo-risks.html", description: "Regulation, crude supply, FX, uptime, valuation, and energy transition risks to review." },
-    { title: "How to compare brokers before buying African equities", category: "Broker education", href: "how-to-compare-brokers-before-buying-african-equities.html", description: "A practical checklist for broker regulation, custody, fees, FX, and IPO allocation rules." },
+    { title: "How to compare brokers before buying African equities", category: "Broker education", href: "how-to-compare-brokers-before-buying-african-equities.html", description: "A practical checklist for broker checks before any potential Dangote Refinery offer." },
     { title: "What does peak oil mean for refinery investors?", category: "Energy transition", href: "what-does-peak-oil-mean-for-refinery-investors.html", description: "How long-term oil demand scenarios can affect refining margins and valuations." }
   ]
 };

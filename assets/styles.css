@@ -374,7 +374,8 @@ button.button {
 .stat-grid span,
 dt,
 .article-link span,
-.timeline-item span {
+.timeline-item span,
+.axis-event span {
   color: var(--beige);
   font-family: "IBM Plex Mono", "Space Mono", monospace;
   font-size: 12px;
@@ -766,6 +767,99 @@ textarea {
   letter-spacing: 0.04em;
 }
 
+.timeline-axis {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.timeline-axis::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(217, 166, 58, 0.18));
+}
+
+.axis-event {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 260px;
+  padding: 58px 18px 20px;
+  border: 1px solid rgba(217, 166, 58, 0.34);
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, rgba(242, 230, 200, 0.04), rgba(8, 23, 21, 0.22)),
+    var(--bg-panel);
+  box-shadow: var(--shadow);
+}
+
+.axis-event::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg-deep);
+  box-shadow: 0 0 0 7px rgba(217, 166, 58, 0.14);
+}
+
+.axis-event h3 {
+  font-size: 24px;
+}
+
+.axis-event p {
+  margin: 0;
+}
+
+.axis-event b {
+  width: fit-content;
+  align-self: end;
+  padding: 4px 8px;
+  border: 1px solid rgba(99, 127, 88, 0.72);
+  border-radius: 3px;
+  background: rgba(99, 127, 88, 0.18);
+  color: #bfd0a9;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.key-details {
+  margin-top: 22px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+  background: var(--bg-deep);
+}
+
+.key-details dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0 0;
+}
+
+.key-details dd {
+  margin: 6px 0 0;
+  color: var(--cream);
+}
+
+.key-details .note {
+  margin-bottom: 0;
+}
+
 .article-link {
   display: grid;
   gap: 10px;
@@ -955,8 +1049,14 @@ textarea {
   .status-grid,
   .three-col,
   .filters,
-  .stat-grid {
+  .stat-grid,
+  .timeline-axis,
+  .key-details dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline-axis::before {
+    display: none;
   }
 }
 
@@ -1025,8 +1125,14 @@ textarea {
   .three-col,
   .filters,
   .stat-grid,
+  .timeline-axis,
+  .key-details dl,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .axis-event {
+    min-height: 0;
   }
 
   .form-grid .full {
