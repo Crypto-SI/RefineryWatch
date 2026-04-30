@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 
 const site = {
   name: "IPO Watch Africa",
@@ -797,10 +797,23 @@ ${sources.map((source) => `- ${source.name}: ${source.url}`).join("\n")}
 `;
 }
 
-for (const page of pages) {
-  writeFileSync(page.file, pageShell(page));
+const outputDirs = [".", "dist"];
+
+rmSync("dist", { recursive: true, force: true });
+mkdirSync("dist", { recursive: true });
+cpSync("assets", "dist/assets", { recursive: true });
+cpSync("public", "dist/public", { recursive: true });
+
+function writeOutput(file, contents) {
+  for (const dir of outputDirs) {
+    writeFileSync(dir === "." ? file : `${dir}/${file}`, contents);
+  }
 }
 
-writeFileSync("sitemap.xml", sitemap());
-writeFileSync("robots.txt", robots());
-writeFileSync("llms.txt", llms());
+for (const page of pages) {
+  writeOutput(page.file, pageShell(page));
+}
+
+writeOutput("sitemap.xml", sitemap());
+writeOutput("robots.txt", robots());
+writeOutput("llms.txt", llms());
