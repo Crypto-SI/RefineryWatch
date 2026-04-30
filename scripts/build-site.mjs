@@ -702,7 +702,7 @@ function trackerBody() {
 }
 
 function timelineBody() {
-  return `<section class="section"><div class="section-inner"><div class="timeline-list" data-timeline>${timeline.map((item) => `<article class="timeline-item"><span>${item.date}</span><h3>${item.title}</h3><p>${item.body}</p><b>${item.tag}</b></article>`).join("")}</div></div></section>`;
+  return `${anticipatedTimelineSection()}<section class="section alt"><div class="section-inner"><div class="timeline-list" data-timeline>${timeline.map((item) => `<article class="timeline-item"><span>${item.date}</span><h3>${item.title}</h3><p>${item.body}</p><b>${item.tag}</b></article>`).join("")}</div></div></section>`;
 }
 
 function risksBody() {
