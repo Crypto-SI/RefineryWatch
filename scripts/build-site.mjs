@@ -3,6 +3,7 @@ import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 const site = {
   name: "IPO Watch Africa",
   domain: "https://ipowatchafrica.com",
+  logo: "public/IPOwatchlogo.png",
   description:
     "Independent educational tracking for the potential Dangote Refinery IPO, listing status, broker access, risks, and retail investor context.",
   image:
@@ -498,6 +499,7 @@ function schemaFor(page) {
       "@id": `${site.domain}/#organization`,
       name: site.name,
       url: site.domain,
+      logo: `${site.domain}/${site.logo}`,
       description: site.description,
     },
     {
@@ -567,7 +569,7 @@ function schemaFor(page) {
 function header() {
   return `<header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html"><span class="brand-mark">IPO</span><span>IPO Watch Africa</span></a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="${site.logo}" alt="" aria-hidden="true"><span>IPO Watch Africa</span></a>
       <button class="menu-button" data-menu-button aria-expanded="false" aria-label="Open menu">☰</button>
       <div class="nav-links" data-menu>${navHtml()}</div>
     </nav>
@@ -577,7 +579,7 @@ function header() {
 function footer() {
   return `<footer class="site-footer">
     <div class="footer-grid">
-      <a class="brand" href="index.html"><span class="brand-mark">IPO</span><span>IPO Watch Africa</span></a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="${site.logo}" alt="" aria-hidden="true"><span>IPO Watch Africa</span></a>
       <div class="footer-links">${navHtml()}<a href="about.html">About</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
       <p class="footer-disclaimer">IPO Watch Africa is an independent educational website. We do not provide financial advice, investment recommendations, or broker endorsements. Always do your own research and consult a qualified professional before investing. Last updated ${site.updated}.</p>
       <a class="footer-credit" href="https://webarastudio.com" target="_blank" rel="noopener noreferrer"><img src="public/webarabadge.png" alt="Built by WebAra Studio" loading="lazy"></a>
