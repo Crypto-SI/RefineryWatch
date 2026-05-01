@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="IPO Watch Africa favicon">
+  <defs>
+    <linearGradient id="bg" x1="72" y1="48" x2="438" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17322f"/>
+      <stop offset="1" stop-color="#081715"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="170" fill="#102927" stroke="#d9a63a" stroke-width="26"/>
+  <path d="M144 356h224" stroke="#f2e6c8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M112 404h288" stroke="#d9a63a" stroke-width="16" stroke-linecap="round" opacity=".72"/>
+  <path d="M174 188l34-34 22 31 35-13 8-42h48l8 42 35 13 22-31 34 34-31 22" fill="none" stroke="#d9a63a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity=".82"/>
+
+  <rect x="152" y="264" width="38" height="92" rx="6" fill="#d9a63a"/>
+  <rect x="216" y="216" width="42" height="140" rx="6" fill="#d9a63a"/>
+  <rect x="284" y="244" width="48" height="112" rx="6" fill="#d9a63a"/>
+
+  <polygon points="152,307 216,292 270,259 322,282 358,272 394,238 407,252 367,291 322,303 273,281 225,312 157,329" fill="#d94324"/>
+  <polygon points="391,222 425,306 340,282" fill="#d94324"/>
+</svg>

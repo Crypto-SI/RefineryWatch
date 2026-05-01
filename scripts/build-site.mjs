@@ -488,6 +488,12 @@ function head(page) {
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(page.description)}">
   <meta name="twitter:image" content="${site.image}">
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="public/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="public/favicon.ico">
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
+  <meta name="theme-color" content="#081715">
   <link rel="stylesheet" href="assets/styles.css?v=${site.assetVersion}">
   <script type="application/ld+json">${schema}</script>`;
 }
