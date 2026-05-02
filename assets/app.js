@@ -107,6 +107,7 @@ function brokerCards(list = data.brokers) {
         ${broker.sponsored ? '<span class="sponsored">Sponsored</span>' : '<span class="plain-label">Directory listing</span>'}
       </div>
       <dl>
+        <div><dt>Nation</dt><dd>${broker.nation || 'Nigeria'}</dd></div>
         <div><dt>Countries served</dt><dd>${broker.countries.join(", ")}</dd></div>
         <div><dt>Exchanges supported</dt><dd>${broker.exchanges.join(", ")}</dd></div>
         <div><dt>Regulator / licence</dt><dd>${broker.regulator}</dd></div>
@@ -175,7 +176,7 @@ function initForms() {
     form.addEventListener("submit", event => {
       event.preventDefault();
       const message = form.querySelector("[data-form-message]");
-      if (message) message.textContent = "Submitted. Connect this form to your email or CRM provider before launch.";
+      if (message) message.textContent = "Thank you for your message. To reach us directly, email admin@ipowatchafrica.com.";
       form.reset();
     });
   });

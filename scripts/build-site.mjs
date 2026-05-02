@@ -172,39 +172,68 @@ const risks = [
 
 const brokers = [
   {
-    name: "Lagos Access Securities",
-    countries: ["Nigeria", "Ghana", "United Kingdom"],
-    exchanges: ["NGX", "GSE"],
-    regulator: "SEC Nigeria - sample profile",
-    minimum: "To be confirmed",
-    fees: "Brokerage and statutory fees may apply",
+    name: "Chapel Hill Denham",
+    nation: "Nigeria",
+    countries: ["Nigeria", "United Kingdom"],
+    exchanges: ["NGX"],
+    regulator: "SEC Nigeria",
+    minimum: "Varies by account type",
+    fees: "Commission-based brokerage plus statutory fees (CSCS, NSE, SEC, Stamp Duty)",
     ipoAccess: "Awaiting prospectus",
-    diaspora: true,
-    regulated: true,
-    sponsored: true,
-  },
-  {
-    name: "Pan-African Markets Desk",
-    countries: ["Kenya", "Nigeria", "South Africa", "United States"],
-    exchanges: ["NGX", "NSE Kenya", "JSE"],
-    regulator: "Multiple licences - verify directly",
-    minimum: "Varies by country",
-    fees: "Custody, FX, and trading fees may apply",
-    ipoAccess: "Not confirmed",
     diaspora: true,
     regulated: true,
     sponsored: false,
   },
   {
-    name: "Retail Equities Africa",
+    name: "Meristem Securities",
+    nation: "Nigeria",
     countries: ["Nigeria"],
     exchanges: ["NGX"],
-    regulator: "Licence number pending verification",
-    minimum: "Low minimum advertised",
-    fees: "Check schedule before account opening",
+    regulator: "SEC Nigeria",
+    minimum: "No minimum account balance required",
+    fees: "Competitive commission rates plus statutory charges",
+    ipoAccess: "Awaiting prospectus",
+    diaspora: false,
+    regulated: true,
+    sponsored: false,
+  },
+  {
+    name: "PAC Securities",
+    nation: "Nigeria",
+    countries: ["Nigeria"],
+    exchanges: ["NGX"],
+    regulator: "SEC Nigeria",
+    minimum: "Varies by product",
+    fees: "Brokerage commission plus regulatory and settlement fees",
     ipoAccess: "Not confirmed",
     diaspora: false,
-    regulated: false,
+    regulated: true,
+    sponsored: false,
+  },
+  {
+    name: "FBNQuest Securities",
+    nation: "Nigeria",
+    countries: ["Nigeria"],
+    exchanges: ["NGX"],
+    regulator: "SEC Nigeria",
+    minimum: "Varies by account type",
+    fees: "Standard brokerage commission plus statutory fees",
+    ipoAccess: "Awaiting prospectus",
+    diaspora: true,
+    regulated: true,
+    sponsored: false,
+  },
+  {
+    name: "CardinalStone Securities",
+    nation: "Nigeria",
+    countries: ["Nigeria"],
+    exchanges: ["NGX"],
+    regulator: "SEC Nigeria",
+    minimum: "Varies by account type",
+    fees: "Competitive commission rates plus statutory charges",
+    ipoAccess: "Awaiting prospectus",
+    diaspora: true,
+    regulated: true,
     sponsored: false,
   },
 ];
@@ -507,6 +536,12 @@ function schemaFor(page) {
       url: site.domain,
       logo: `${site.domain}/${site.logo}`,
       description: site.description,
+      email: "admin@ipowatchafrica.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "admin@ipowatchafrica.com",
+        contactType: "customer service",
+      },
     },
     {
       "@type": "WebSite",
@@ -586,7 +621,7 @@ function footer() {
   return `<footer class="site-footer">
     <div class="footer-grid">
       <a class="brand" href="index.html"><img class="brand-logo" src="${site.logo}" alt="" aria-hidden="true"><span>IPO Watch Africa</span></a>
-      <div class="footer-links">${navHtml()}<a href="about.html">About</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+      <div class="footer-links">${navHtml()}<a href="about.html">About</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a></div>
       <p class="footer-disclaimer">IPO Watch Africa is an independent educational website. We do not provide financial advice, investment recommendations, or broker endorsements. Always do your own research and consult a qualified professional before investing. Last updated ${site.updated}.</p>
       <a class="footer-credit" href="https://webarastudio.com" target="_blank" rel="noopener noreferrer"><img src="public/webarabadge.png" alt="Built by WebAra Studio" loading="lazy"></a>
     </div>
@@ -679,7 +714,7 @@ function brokerFilters() {
 }
 
 function brokerCards() {
-  return `<div class="grid three-col" data-broker-cards>${brokers.map((broker) => `<article class="broker-card"><div class="card-top"><h3>${broker.name}</h3>${broker.sponsored ? '<span class="sponsored">Sponsored</span>' : '<span class="plain-label">Directory listing</span>'}</div><dl><div><dt>Countries served</dt><dd>${broker.countries.join(", ")}</dd></div><div><dt>Exchanges supported</dt><dd>${broker.exchanges.join(", ")}</dd></div><div><dt>Regulator / licence</dt><dd>${broker.regulator}</dd></div><div><dt>Account minimum</dt><dd>${broker.minimum}</dd></div><div><dt>Fees</dt><dd>${broker.fees}</dd></div><div><dt>IPO access</dt><dd>${broker.ipoAccess}</dd></div></dl><a class="button secondary" href="contact.html">Visit broker</a></article>`).join("")}</div>`;
+  return `<div class="grid three-col" data-broker-cards>${brokers.map((broker) => `<article class="broker-card"><div class="card-top"><h3>${broker.name}</h3>${broker.sponsored ? '<span class="sponsored">Sponsored</span>' : '<span class="plain-label">Directory listing</span>'}</div><dl><div><dt>Nation</dt><dd>${broker.nation || 'Nigeria'}</dd></div><div><dt>Countries served</dt><dd>${broker.countries.join(", ")}</dd></div><div><dt>Exchanges supported</dt><dd>${broker.exchanges.join(", ")}</dd></div><div><dt>Regulator / licence</dt><dd>${broker.regulator}</dd></div><div><dt>Account minimum</dt><dd>${broker.minimum}</dd></div><div><dt>Fees</dt><dd>${broker.fees}</dd></div><div><dt>IPO access</dt><dd>${broker.ipoAccess}</dd></div></dl><a class="button secondary" href="contact.html">Visit broker</a></article>`).join("")}</div>`;
 }
 
 function statCards() {
@@ -747,11 +782,11 @@ function articlePage(article) {
 }
 
 function aboutBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Mission</h2><p>We track confirmed Dangote Refinery IPO updates, explain risks, show broker options, and publish accessible education without recommending whether anyone should buy, sell, or hold an investment.</p></article><article class="info-card"><h2>Editorial standard</h2><p>We separate confirmed information from unknowns, label sponsored placements, avoid price predictions, and keep investor protection visible.</p></article><article class="info-card"><h2>Future coverage</h2><p>The site may track other African IPOs later, but the current editorial focus is the potential Dangote Refinery listing.</p></article></div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Mission</h2><p>We track confirmed Dangote Refinery IPO updates, explain risks, show broker options, and publish accessible education without recommending whether anyone should buy, sell, or hold an investment.</p></article><article class="info-card"><h2>Editorial standard</h2><p>We separate confirmed information from unknowns, label sponsored placements, avoid price predictions, and keep investor protection visible.</p></article><article class="info-card"><h2>Future coverage</h2><p>The site may track other African IPOs later, but the current editorial focus is the potential Dangote Refinery listing.</p></article><article class="info-card"><h2>Get in touch</h2><p>For questions, corrections, or partnership enquiries, email <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a> or use our <a href="contact.html">contact page</a>.</p></article></div></section>`;
 }
 
 function editorialBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Source hierarchy</h2><ul class="fact-list"><li>Official issuer, exchange, and regulator documents come first.</li><li>Media reports are labelled as reported until confirmed by primary sources.</li><li>Pricing, eligibility, and allocation rules remain unknown until prospectus details are available.</li></ul></article><article class="info-card"><h2>Corrections</h2><p>Send corrections through the contact page with the source, date, and exact claim. We update pages when a primary source changes the facts.</p></article><article class="info-card"><h2>Sponsored content</h2><p>Sponsored placements must be labelled. Sponsorship does not mean broker endorsement or investment suitability.</p></article><article class="info-card"><h2>No financial advice</h2><p>We publish general education only. We do not recommend buying, selling, subscribing for, or holding any security.</p></article></div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Source hierarchy</h2><ul class="fact-list"><li>Official issuer, exchange, and regulator documents come first.</li><li>Media reports are labelled as reported until confirmed by primary sources.</li><li>Pricing, eligibility, and allocation rules remain unknown until prospectus details are available.</li></ul></article><article class="info-card"><h2>Corrections</h2><p>Send corrections through the <a href="contact.html">contact page</a> or email <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a> with the source, date, and exact claim. We update pages when a primary source changes the facts.</p></article><article class="info-card"><h2>Sponsored content</h2><p>Sponsored placements must be labelled. Sponsorship does not mean broker endorsement or investment suitability.</p></article><article class="info-card"><h2>No financial advice</h2><p>We publish general education only. We do not recommend buying, selling, subscribing for, or holding any security.</p></article></div></section>`;
 }
 
 function advertiseBody() {
@@ -759,15 +794,15 @@ function advertiseBody() {
 }
 
 function contactBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Before you write</h2><p>We cannot provide investment advice, tell you whether to buy shares, or recommend a broker. For personal advice, consult a qualified professional.</p></article>${contactForm()}</div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Before you write</h2><p>We cannot provide investment advice, tell you whether to buy shares, or recommend a broker. For personal advice, consult a qualified professional.</p><p>Email us directly at <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a> if you prefer not to use the form.</p></article>${contactForm()}</div></section>`;
 }
 
 function privacyBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Data we may collect</h2><p>Email, country, investor type, contact messages, aggregated page views, country-level traffic, newsletter signups, and broker directory click totals.</p></article><article class="info-card"><h2>Data we do not display</h2><p>We do not publish IP addresses, exact user locations, individual visitor journeys, or real-time personal data on the Live Interest Map.</p></article><article class="info-card"><h2>Analytics</h2><p>The site is analytics-ready for privacy-conscious tools. Configure analytics to avoid unnecessary personal tracking before launch.</p></article><article class="info-card"><h2>Your choices</h2><p>Newsletter subscribers should be able to unsubscribe, request deletion, and ask how their information is used.</p></article></div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>Data we may collect</h2><p>Email, country, investor type, contact messages, aggregated page views, country-level traffic, newsletter signups, and broker directory click totals.</p></article><article class="info-card"><h2>Data we do not display</h2><p>We do not publish IP addresses, exact user locations, individual visitor journeys, or real-time personal data on the Live Interest Map.</p></article><article class="info-card"><h2>Analytics</h2><p>The site is analytics-ready for privacy-conscious tools. Configure analytics to avoid unnecessary personal tracking before launch.</p></article><article class="info-card"><h2>Your choices</h2><p>Newsletter subscribers should be able to unsubscribe, request deletion, and ask how their information is used.</p></article><article class="info-card"><h2>Contact for data enquiries</h2><p>For any privacy or data-related questions, email <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a>.</p></article></div></section>`;
 }
 
 function termsBody() {
-  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>No advice</h2><p>Nothing on this site is investment, tax, legal, or broker selection advice. We do not recommend buying, selling, subscribing for, or holding any security.</p></article><article class="info-card"><h2>No broker endorsement</h2><p>Broker directory entries are informational. Sponsored placements are labelled and do not mean endorsement or suitability.</p></article><article class="info-card"><h2>Accuracy</h2><p>We aim to track official and reliable information, but IPO terms can change. Verify all details with official issuer, exchange, regulator, and broker sources.</p></article><article class="info-card"><h2>Investor responsibility</h2><p>Always do your own research and consult a qualified professional before investing, especially when dealing with cross-border access and currency risk.</p></article></div></section>`;
+  return `<section class="section"><div class="section-inner grid two-col"><article class="info-card"><h2>No advice</h2><p>Nothing on this site is investment, tax, legal, or broker selection advice. We do not recommend buying, selling, subscribing for, or holding any security.</p></article><article class="info-card"><h2>No broker endorsement</h2><p>Broker directory entries are informational. Sponsored placements are labelled and do not mean endorsement or suitability.</p></article><article class="info-card"><h2>Accuracy</h2><p>We aim to track official and reliable information, but IPO terms can change. Verify all details with official issuer, exchange, regulator, and broker sources.</p></article><article class="info-card"><h2>Investor responsibility</h2><p>Always do your own research and consult a qualified professional before investing, especially when dealing with cross-border access and currency risk.</p></article><article class="info-card"><h2>Questions</h2><p>For questions about these terms, email <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a>.</p></article></div></section>`;
 }
 
 function watchlistForm() {
@@ -775,7 +810,7 @@ function watchlistForm() {
 }
 
 function mediaKitForm() {
-  return `<form class="form-panel" data-demo-form><h2>Request Media Kit</h2><div class="form-grid"><label>Name<input required></label><label>Work email<input type="email" required></label><label>Company<input required></label><label>Advertiser type<select><option>Broker</option><option>Financial brand</option><option>Media agency</option><option>Other</option></select></label><label class="full">Message<textarea required></textarea></label></div><div class="section-actions"><button class="button" type="submit">Request Media Kit</button></div><p class="form-message" data-form-message></p></form>`;
+  return `<form class="form-panel" data-demo-form><h2>Request Media Kit</h2><p>Or email us directly at <a href="mailto:admin@ipowatchafrica.com">admin@ipowatchafrica.com</a>.</p><div class="form-grid"><label>Name<input required></label><label>Work email<input type="email" required></label><label>Company<input required></label><label>Advertiser type<select><option>Broker</option><option>Financial brand</option><option>Media agency</option><option>Other</option></select></label><label class="full">Message<textarea required></textarea></label></div><div class="section-actions"><button class="button" type="submit">Request Media Kit</button></div><p class="form-message" data-form-message></p></form>`;
 }
 
 function contactForm() {
